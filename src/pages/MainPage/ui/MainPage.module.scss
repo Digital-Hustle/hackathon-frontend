@@ -152,7 +152,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  pointer-events: none; /* Чтобы декорации не мешали кликам */
+  pointer-events: none;
 }
 
 .circle {
@@ -352,4 +352,10 @@
 
 .LogoTnsColor {
   fill: var(--text-color);
+}
+
+@media (max-width: 1026px) {
+  .circle3 {
+    display: none;
+  }
 }
