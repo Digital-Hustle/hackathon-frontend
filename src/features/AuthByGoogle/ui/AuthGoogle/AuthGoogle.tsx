@@ -14,7 +14,7 @@ interface AuthGoogleProps {
 }
 
 const AuthGoogle = ({className, onSuccess}: AuthGoogleProps) => {
-    const {t} = useTranslation();
+    const {t} = useTranslation('auth');
     const dispatch = useAppDispatch();
 
 

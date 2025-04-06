@@ -1,8 +1,11 @@
+@use "../../../app/styles/variables/global" as *;
+
+
 .notFoundPage {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-
-  font: var(--font-l)
+  @include text700;
+  color: var(--notification-color)
 }

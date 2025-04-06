@@ -5,8 +5,8 @@ import { Client, StompSubscription } from '@stomp/stompjs';
 import { ACCESS_TOKEN_LOCAL_STORAGE_KEY } from "shared/const/localstorage";
 
 const SERVER_URL = "ws://10.165.8.60:8081/ws";
-const DESTINATION = `/chat/14`;  // Канал для получения сообщений
-const SEND_DESTINATION = "/app/sendMessage";  // Канал для отправки сообщений
+const DESTINATION = `/chat/14`;
+const SEND_DESTINATION = "/app/sendMessage";
 
 const AboutPage: React.FC = () => {
     const { t } = useTranslation('about');
@@ -14,12 +14,11 @@ const AboutPage: React.FC = () => {
     const [messages, setMessages] = useState<{ nickname: string, content: string }[]>([]);
     const [message, setMessage] = useState('');
     const [nickname, setNickname] = useState('');
-    const [chatId, setChatId] = useState(14); // Пример ID чата
+    const [chatId, setChatId] = useState(14);
 
     const clientRef = useRef<Client | null>(null);
     const subscriptionRef = useRef<StompSubscription | null>(null);
 
-    // Подключение к WebSocket и подписка на получение сообщений
     useEffect(() => {
         const stompClient = new Client({
             brokerURL: SERVER_URL,
@@ -32,7 +31,7 @@ const AboutPage: React.FC = () => {
                 subscriptionRef.current = stompClient.subscribe(DESTINATION, (message) => {
                     try {
                         const receivedMessage: { nickname: string; content: string } = JSON.parse(message.body);
-                        console.log('📥 Получено сообщение:', receivedMessage);  // Логирование полученного сообщения
+                        console.log('📥 Получено сообщение:', receivedMessage);
                         setMessages((prevMessages) => [...prevMessages, receivedMessage]);
                     } catch (error) {
                         console.error('Ошибка обработки сообщения (STOMP):', error);
@@ -47,7 +46,6 @@ const AboutPage: React.FC = () => {
 
         stompClient.activate();
 
-        // Очистка при размонтировании компонента
         return () => {
             if (subscriptionRef.current) {
                 subscriptionRef.current.unsubscribe();
@@ -66,24 +64,21 @@ const AboutPage: React.FC = () => {
         setMessage(e.target.value);
     };
 
-    // Функция для отправки сообщений
     const sendMessage = () => {
         if (message.trim() && clientRef.current) {
-            const token = localStorage.getItem(ACCESS_TOKEN_LOCAL_STORAGE_KEY); // Получаем токен из localStorage
+            const token = localStorage.getItem(ACCESS_TOKEN_LOCAL_STORAGE_KEY);
             if (token) {
-                // Формируем только тело сообщения как JSON
                 const messageBody = JSON.stringify({
                     chatId: chatId,
                     messageText: message,
-                    senderName: "dyrak", // заменяем на нужное имя
+                    senderName: "dyrak",
                 });
 
-                // Теперь отправляем только тело, а метаданные (например, Authorization) через заголовки
                 console.log('📨 Отправка сообщения (STOMP):', messageBody);
 
                 clientRef.current.publish({
                     destination: SEND_DESTINATION,
-                    body: messageBody, // Тело сообщения теперь просто JSON строка
+                    body: messageBody,
                     headers: {
                         'content-type': 'application/json',
                         Authorization: `Bearer ${token}`,
@@ -98,8 +93,6 @@ const AboutPage: React.FC = () => {
         }
     };
 
-
-    // Формируем тело сообщения для отправки
     const getSendFrame = (chatId: number, message: string, senderName: string, token: string) => {
         console.log('чатайди', chatId);
         console.log('текст', message);
@@ -135,21 +128,3 @@ const AboutPage: React.FC = () => {
 };
 
 export default memo(AboutPage);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

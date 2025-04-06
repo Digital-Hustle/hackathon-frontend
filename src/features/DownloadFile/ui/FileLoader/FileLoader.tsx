@@ -7,14 +7,14 @@ import {Icon} from "shared/ui/Icon/Icon";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import trashIcon from "../../../../shared/assets/icons/trash.svg"
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
-import {downloadFile} from "features/DownloadFile/model/services/downloadFile/downloadFile";
+import {downloadFile} from "../../model/services/downloadFile/downloadFile";
 
 export interface FileLoaderProps {
     className?: string;
 }
 
 const FileLoader = ({className}: FileLoaderProps) => {
-    const {t} = useTranslation();
+    const {t} = useTranslation('main');
     const dispatch = useAppDispatch();
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -29,7 +29,7 @@ const FileLoader = ({className}: FileLoaderProps) => {
             const fileExtension = file.name.slice(file.name.lastIndexOf('.'));
 
             if (!allowedExtensions.includes(fileExtension)) {
-                setError("Неверный формат файла. Пожалуйста, выберите файл .xls или .xlsx.");
+                setError(t("Неверный формат файла. Пожалуйста, выберите файл .xls или .xlsx."));
                 setSelectedFile(null);
             } else {
                 setError("");
@@ -49,7 +49,6 @@ const FileLoader = ({className}: FileLoaderProps) => {
     };
 
     const uploadFile = (file: File) => {
-        console.log("uploadfile",file)
         const formData = new FormData();
         formData.append("file", file);
         dispatch(downloadFile(formData));
@@ -70,7 +69,9 @@ const FileLoader = ({className}: FileLoaderProps) => {
                 <div className={cls.wrapper}>
                     <Icon Svg={uploadIcon}/>
                     <div>
-                        <p className={cls.Text}>Выбрать файл с устройства</p>
+                        <p className={cls.Text}>
+                            {t('Выбрать файл с устройства')}
+                            </p>
                         <p className={cls.greyText}>.xls, .xlsx</p>
                     </div>
                 </div>

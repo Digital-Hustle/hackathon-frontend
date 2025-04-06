@@ -3,7 +3,7 @@ import {classNames} from "shared/lib/classNames/classNames";
 import * as cls from './ChatList.module.scss'
 import {useTranslation} from "react-i18next";
 import {Chat} from "../../model/types/chat";
-import {ChatListItem} from "entities/Chat/ui/ChatListItem/ChatListItem";
+import {ChatListItem} from "../../ui/ChatListItem/ChatListItem";
 
 interface ChatListProps {
     className?: string;
@@ -19,7 +19,7 @@ interface ChatListProps {
 //         <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
 //     ));
 
-export const ChatList = (props: ChatListProps) => {
+export const ChatList = memo((props: ChatListProps) => {
 
     const {
         className,
@@ -52,4 +52,4 @@ export const ChatList = (props: ChatListProps) => {
             {/*{isLoading && getSkeletons(view)}*/}
         </div>
     );
-};
+});

@@ -34,7 +34,7 @@ const initialReducers: ReducersList = {
 };
 
 const AuthForm = ({className, onSuccess}: AuthFormProps) => {
-    const {t} = useTranslation();
+    const {t} = useTranslation('auth');
     const dispatch = useAppDispatch();
     const usernameState = useSelector(getLoginUsername)
     const passwordState = useSelector(getLoginPassword)
@@ -161,7 +161,6 @@ const AuthForm = ({className, onSuccess}: AuthFormProps) => {
                 onSuccess();
             }
         } else {
-            console.log('Есть ошибки в форме');
         }
     }, [dispatch, username, password, confirmPassword, isRegistrationMode, onSuccess]);
 

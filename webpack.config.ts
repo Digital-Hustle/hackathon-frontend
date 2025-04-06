@@ -19,7 +19,7 @@ export default (env: BuildEnv) => {
     const mode = env.mode || 'development';
     const isDev = mode === 'development';
     const PORT = env.port || 3000;
-    const apiUrl: string = env.apiUrl || process.env.API_URL || "http://10.165.8.60:8081";
+    const apiUrl: string = env.apiUrl || process.env.API_URL || "***";
     const googleClientId: string = env.googleClientId || process.env.GOOGLE_CLIENT_ID || '';
 
     const config: webpack.Configuration = buildWebpackConfig({

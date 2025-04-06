@@ -3,13 +3,13 @@ import {classNames} from "shared/lib/classNames/classNames";
 import * as cls from './ChatsPage.module.scss'
 import {useTranslation} from "react-i18next";
 import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import {chatsPageReducer} from "pages/ChatsPage/model/slices/chatPageSlice";
+import {chatsPageReducer} from "../../model/slices/chatPageSlice";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSearchParams} from "react-router-dom";
 import {Page} from "widgets/Page/Page";
-import {ChatInfiniteList} from "pages/ChatsPage/ui/ChatInfiniteList/ChatInfiniteList";
-import {fetchNextChatsPage} from "pages/ChatsPage/model/services/fetchNextChatsPage/fetchNextChatsPage";
-import {initChatsPage} from "pages/ChatsPage/model/services/initChatsPage/initChatsPage";
+import {ChatInfiniteList} from "../../ui/ChatInfiniteList/ChatInfiniteList";
+import {fetchNextChatsPage} from "../../model/services/fetchNextChatsPage/fetchNextChatsPage";
+import {initChatsPage} from "../../model/services/initChatsPage/initChatsPage";
 
 interface ChatsPageProps {
     className?: string;

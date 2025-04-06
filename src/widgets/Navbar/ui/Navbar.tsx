@@ -1,10 +1,9 @@
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useCallback} from 'react';
 import {classNames} from "shared/lib/classNames/classNames";
 import * as cls from "./Navbar.module.scss"
 import {useTranslation} from "react-i18next";
 import {getUserAuthData, userActions} from "entities/User";
 import {useDispatch, useSelector} from "react-redux";
-import {Text, TextSize, TextTheme} from "shared/ui/Text/Text"
 import AppLink, {AppLinkTheme} from "shared/ui/AppLink/AppLink";
 import {RoutePath} from "shared/const/router";
 import {DropDown} from "shared/ui/DropDown/DropDown";
@@ -13,12 +12,9 @@ import {getProfileData} from "features/EditableProfileCard/model/selectors/getPr
 import {
     getProfileIsLoading
 } from "features/EditableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading";
-import {Loader} from "shared/ui/Loader/Loader";
 import {Icon} from "shared/ui/Icon/Icon";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
-import LangSwitcher from "widgets/LangSwitcher/LangSwitcher";
-import {Button, ButtonSize, ButtonTheme} from "shared/ui/Button/Button";
-import {LOCAL_STORAGE_THEME_KEY} from "app/providers/ThemeProvider/lib/ThemeContext";
+import {ThemeSwitcher} from "../../ThemeSwitcher/index"
+import LangSwitcher from "../../LangSwitcher/LangSwitcher";
 import TnsLogo from "shared/assets/icons/TnsLogoDark.svg";
 
 
@@ -70,22 +66,22 @@ export const Navbar = memo(({className}: NavbarProps) => {
                 <div className={cls.switcherWrapper}>
                     <ThemeSwitcher className={cls.themeSwitcher}/>
                     <LangSwitcher className={cls.langSwitcher} />
+                    <DropDown
+                        direction='bottom left'
+                        className={cls.dropdown}
+                        items={[
+                            {
+                                content: t('Профиль'),
+                                href: RoutePath.profile + authData.id,
+                            },
+                            {
+                                content: t('Выйти'),
+                                onClick: onLogout,
+                            }
+                        ]}
+                        trigger={<Avatar size={30} src={`data:image/jpeg;base64,${profileData?.photo}`}/>}
+                    />
                 </div>
-                <DropDown
-                    direction='bottom left'
-                    className={cls.dropdown}
-                    items={[
-                        {
-                            content: t('Профиль'),
-                            href: RoutePath.profile + authData.id,
-                        },
-                        {
-                            content: t('Выйти'),
-                            onClick: onLogout,
-                        }
-                    ]}
-                    trigger={<Avatar size={30} src={`data:image/jpeg;base64,${profileData?.photo}`}/>}
-                />
             </header>
         )
     }

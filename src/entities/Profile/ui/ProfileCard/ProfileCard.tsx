@@ -99,27 +99,29 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     disabled={readonly}
                 />
             </div>
-            <Input
-                value={data?.name ?? ''}
-                placeholder={t('Ваше имя')}
-                className={cls.input}
-                onChange={onChangeFirstname}
-                readonly={readonly}
-            />
-            <Input
-                value={data?.age ?? ''}
-                placeholder={t('Ваш возраст')}
-                className={cls.input}
-                onChange={onChangeAge}
-                readonly={readonly}
-            />
-            <Input
-                value={data?.description ?? ''}
-                placeholder={t('Описание')}
-                className={cls.input}
-                onChange={onChangeDescription}
-                readonly={readonly}
-            />
+            <div className={cls.InputsWrapper}>
+                <Input
+                    value={data?.name ?? ''}
+                    placeholder={t('Ваше имя')}
+                    className={cls.input}
+                    onChange={onChangeFirstname}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.age ?? ''}
+                    placeholder={t('Ваш возраст')}
+                    className={cls.input}
+                    onChange={onChangeAge}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.description ?? ''}
+                    placeholder={t('Описание')}
+                    className={cls.input}
+                    onChange={onChangeDescription}
+                    readonly={readonly}
+                />
+            </div>
         </div>
     );
 };

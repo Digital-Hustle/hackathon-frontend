@@ -6,7 +6,7 @@ import {Text} from "shared/ui/Text/Text";
 import {Card, CardTheme} from "shared/ui/Card/Card";
 import AppLink from "shared/ui/AppLink/AppLink";
 import {RoutePath} from "shared/const/router";
-import {Chat} from "entities/Chat/model/types/chat";
+import {Chat} from "../../model/types/chat";
 import {Avatar} from "shared/ui/Avatar/Avatar";
 
 interface ChatListItemProps {

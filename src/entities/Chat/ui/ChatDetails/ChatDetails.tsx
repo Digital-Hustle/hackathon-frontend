@@ -5,14 +5,14 @@ import {useTranslation} from "react-i18next";
 import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {Text, TextAlign, TextSize} from "shared/ui/Text/Text"
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {chatDetailsReducer} from "entities/Chat/model/slice/chatDetailsSlice";
+import {chatDetailsReducer} from "../../model/slice/chatDetailsSlice";
 import {useSelector} from "react-redux";
-import {fetchChatById} from "entities/Chat/model/services/fetchChatById/fetchChatById";
+import {fetchChatById} from "../../model/services/fetchChatById/fetchChatById";
 import {
     getChatDetailsData,
     getChatDetailsError,
     getChatDetailsIsLoading
-} from "entities/Chat/model/selectors/chatDetails";
+} from "../../model/selectors/chatDetails";
 import {Skeleton} from "shared/ui/Skeleton/Skeleton";
 import {Avatar} from "shared/ui/Avatar/Avatar";
 import {getChats} from "pages/ChatsPage/model/slices/chatPageSlice";

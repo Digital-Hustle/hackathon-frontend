@@ -1,11 +1,10 @@
 import React from 'react';
-
 import {useTranslation} from "react-i18next";
 import {ChatList} from "entities/Chat";
 import {useSelector} from "react-redux";
-import {getChatsError, getChatsIsLoading} from "pages/ChatsPage/model/selectors/chatsPageSelectors";
-import {getChats} from "pages/ChatsPage/model/slices/chatPageSlice";
-import { Text} from "../../../../shared/ui/Text/Text"
+import {getChatsError, getChatsIsLoading} from "../../model/selectors/chatsPageSelectors";
+import {getChats} from "../../model/slices/chatPageSlice";
+import {Text} from "shared/ui/Text/Text"
 
 interface ChatInfiniteListProps {
     className?: string;

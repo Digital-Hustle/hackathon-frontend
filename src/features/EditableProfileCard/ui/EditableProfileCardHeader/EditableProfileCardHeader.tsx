@@ -24,10 +24,7 @@ export const EditableProfileCardHeader = ({className}: EditableProfileCardHeader
     const {t} = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
-    console.log('authdata',authData)
-    console.log('profiledata',profileData)
-    // const isMyPage = authData?.id === profileData?.id
-    const isMyPage = true;
+    const isMyPage = authData?.id === profileData?.id
     const readonly = useSelector(getProfileReadonly)
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
