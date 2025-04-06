@@ -61,7 +61,7 @@
   background-color: var(--bg-color);
   display: flex;
   align-items: center;
-  gap: 10rem;
+  gap: 20%;
   margin-block-end: 10rem;
 }
 
@@ -344,4 +344,12 @@
   padding: 2.5rem 3.4rem;
   @include text-button-small;
   margin-inline-start: 4rem;
+}
+
+.downloadLink {
+  color: var(--text-color);
+}
+
+.LogoTnsColor {
+  fill: var(--text-color);
 }

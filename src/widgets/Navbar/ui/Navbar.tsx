@@ -19,8 +19,7 @@ import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import LangSwitcher from "widgets/LangSwitcher/LangSwitcher";
 import {Button, ButtonSize, ButtonTheme} from "shared/ui/Button/Button";
 import {LOCAL_STORAGE_THEME_KEY} from "app/providers/ThemeProvider/lib/ThemeContext";
-import TnsLogo from "shared/assets/icons/tnsLogo.svg";
-import TnsLogoDark from "shared/assets/icons/TnsLogoDark.svg";
+import TnsLogo from "shared/assets/icons/TnsLogoDark.svg";
 
 
 interface NavbarProps {
@@ -30,9 +29,6 @@ interface NavbarProps {
 export const Navbar = memo(({className}: NavbarProps) => {
 
     const {t} = useTranslation();
-    const theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
-    const Logo = (theme === "app_light_theme" || theme === "app_purple_theme") ? TnsLogo : TnsLogoDark;
-    console.log(Logo)
 
     const authData = useSelector(getUserAuthData)
     const profileData = useSelector(getProfileData)
@@ -53,7 +49,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
                         to={RoutePath.main}
                         theme={AppLinkTheme.PRIMARY}
                     >
-                        <Icon Svg={Logo}/>
+                        <Icon Svg={TnsLogo} className={cls.LogoTnsColor}/>
                         <div className={cls.switcherWrapper}>
                             <ThemeSwitcher className={cls.themeSwitcher}/>
                             <LangSwitcher className={cls.langSwitcher}/>
@@ -69,7 +65,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
                     to={RoutePath.main}
                     theme={AppLinkTheme.PRIMARY}
                 >
-                    <Icon Svg={Logo}/>
+                    <Icon Svg={TnsLogo} className={cls.LogoTnsColor}/>
                 </AppLink>
                 <div className={cls.switcherWrapper}>
                     <ThemeSwitcher className={cls.themeSwitcher}/>
@@ -101,7 +97,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
                 to={RoutePath.main}
                 theme={AppLinkTheme.PRIMARY}
             >
-                <Icon Svg={Logo}/>
+                <Icon Svg={TnsLogo} className={cls.LogoTnsColor}/>
             </AppLink>
             <div className={cls.switcherWrapper}>
                 <ThemeSwitcher className={cls.themeSwitcher}/>

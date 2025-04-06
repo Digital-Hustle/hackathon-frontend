@@ -2,8 +2,7 @@ import React, {memo} from 'react';
 import {useTranslation} from "react-i18next";
 import * as cls from './MainPage.module.scss'
 import {Button, ButtonSize, ButtonTheme} from "shared/ui/Button/Button";
-import TnsLogo from "shared/assets/icons/tnsLogo.svg"
-import TnsLogoDark from "shared/assets/icons/TnsLogoDark.svg"
+import TnsLogo from "shared/assets/icons/TnsLogoDark.svg"
 import {Icon} from "shared/ui/Icon/Icon";
 import telegramLogo from "shared/assets/icons/telegramIcon.svg"
 import circle from "shared/assets/icons/circle.svg"
@@ -18,6 +17,7 @@ import fourtdot from "../../../shared/assets/icons/4dot.svg"
 import scrollicon from "../../../shared/assets/icons/scroll.svg"
 import shapeIcon from "../../../shared/assets/icons/shape.svg"
 import {LOCAL_STORAGE_THEME_KEY} from "app/providers/ThemeProvider/lib/ThemeContext";
+import xlsxFile from 'shared/assets/file/tns_template.xlsx';
 import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import LangSwitcher from "widgets/LangSwitcher/LangSwitcher";
 import {useNavigate} from "react-router-dom";
@@ -28,8 +28,6 @@ import {FileLoader} from "features/DownloadFile";
 const MainPage = () => {
 
     const {t} = useTranslation('main');
-    const theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
-    const Logo = (theme === "app_light_theme" || theme === "app_purple_theme") ? TnsLogo : TnsLogoDark;
     const navigate = useNavigate();
 
 
@@ -48,31 +46,31 @@ const MainPage = () => {
             />
             <header className={cls.header}>
                 <div className={cls.logoWrapper}>
-                    <Icon Svg={Logo}/>
+                    <Icon Svg={TnsLogo} className={cls.LogoTnsColor}/>
                 </div>
                 <div className={cls.itemsWrapper}>
                     <ThemeSwitcher className={cls.themeSwitcher}/>
-                    <LangSwitcher className={cls.langSwitcher} />
+                    <LangSwitcher className={cls.langSwitcher}/>
                     <Button
                         size={ButtonSize.XL}
                         className={cls.loginBtn}
                         theme={ButtonTheme.ACCENT}
                         onClick={() => navigate(RoutePath.auth)}
                     >
-                        {t('Войти в аккуант')}
+                        {t('Войти в аккаунт')}
                     </Button>
                 </div>
             </header>
             <section className={cls.hero}>
                 <div className={cls.content}>
                     <h1 className={cls.title}>
-                        Экономьте<br/>
-                        как<br/>
-                        <span className={cls.underline}>никогда</span><br/>
-                        раньше
+                        {t('Экономьте')}<br/>
+                        {t('как')}<br/>
+                        <span className={cls.underline}>{t('никогда')}</span><br/>
+                        {t('раньше')}
                     </h1>
                     <p className={cls.description}>
-                        Быстро рассчитайте нужные и максимально выгодные тарифы. Прощай волокита! 👋
+                        {t('Быстро рассчитайте нужные и максимально выгодные тарифы. Прощай волокита! 👋')}
                     </p>
                     <div className={cls.buttons}>
                         <Button
@@ -97,7 +95,7 @@ const MainPage = () => {
                             className={cls.scrollIco}
                             Svg={scrollicon}
                         />
-                        Листайте ниже, чтобы узнать больше
+                        {t('Листайте ниже, чтобы узнать больше')}
                     </div>
                 </div>
                 <div className={cls.imageWrapper}>
@@ -117,12 +115,16 @@ const MainPage = () => {
             <section className={cls.hero}>
                 <div className={cls.contentColumn}>
                     <div className={cls.TextBlock}>
-                        <p className={cls.blueText}>Сервис для определения оптимальной ценовой категории</p>
+                        <p className={cls.blueText}>
+                            {t('Сервис для определения оптимальной ценовой категории')}
+                        </p>
                         <h1 className={cls.title}>
-                            Как это<br/>
-                            работает <span className={cls.question}>?</span> <br/>
+                            {t('Как это')}<br/>
+                            {t('работает')} <span className={cls.question}>?</span> <br/>
                         </h1>
-                        <p className={cls.greyText}>Предложим подходящий для Вас тариф. Экономьте миллионы.</p>
+                        <p className={cls.greyText}>
+                            {t('Предложим подходящий для Вас тариф. Экономьте миллионы.')}
+                            </p>
                     </div>
                     <div className={cls.instruction}>
                         <div className={cls.instructionItem}>
@@ -130,24 +132,27 @@ const MainPage = () => {
                                 className={cls.dote}
                                 Svg={fourtdot}
                             />
-                            <p className={cls.textInstruction}>Вы загружаете файл с вашим деталями потреблением
-                                электроэнергии</p>
+                            <p className={cls.textInstruction}>
+                                {t('Вы загружаете файл с вашим деталями потреблением электроэнергии')}
+                                </p>
                         </div>
                         <div className={cls.instructionItem}>
                             <Icon
                                 className={cls.dote}
                                 Svg={dotindot}
                             />
-                            <p className={cls.textInstruction}>Мы рассчитываем и предлагаем для Вас наиболее выгодный
-                                тариф</p>
+                            <p className={cls.textInstruction}>
+                                {t('Мы рассчитываем и предлагаем для Вас наиболее выгодный тариф')}
+                                </p>
                         </div>
                         <div className={cls.instructionItem}>
                             <Icon
                                 className={cls.dote}
                                 Svg={secdot}
                             />
-                            <p className={cls.textInstruction}>Вы можете войти в свой личный кабинет для сохранения
-                                рассчетов</p>
+                            <p className={cls.textInstruction}>
+                                {t('Вы можете войти в свой личный кабинет для сохранения рассчетов')}
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -165,24 +170,27 @@ const MainPage = () => {
             <section className={cls.lastSection}>
                 <div className={cls.wrapperClouds}>
                     <div className={cls.cloudBig}>
-                        <img src={cloudBig} alt=""/>
+                        <img src={cloudBig} alt="Облако большое"/>
                     </div>
-                    <FileLoader className={cls.fileInput} />
-                    {/*<FileInput className={cls.fileInput}/>*/}
+                    <FileLoader className={cls.fileInput}/>
                     <div className={cls.cloudSmall}>
-                        <img src={cloudSmall} alt=""/>
+                        <img src={cloudSmall} alt="Облако маленькое"/>
                     </div>
                 </div>
+
                 <Button
                     size={ButtonSize.XL}
                     className={cls.downloadBtn}
                     theme={ButtonTheme.ACCENT}
                 >
-                    <Icon
-                        className={cls.shapeIcon}
-                        Svg={shapeIcon}
-                    />
-                    {t('Скачать шаблон')}
+                    <a
+                        href={xlsxFile}
+                        download="template.xlsx"
+                        className={cls.downloadLink}
+                    >
+                        <Icon className={cls.shapeIcon} Svg={shapeIcon}/>
+                        {t('Скачать шаблон')}
+                    </a>
                 </Button>
                 <Icon
                     className={cls.circlegre1}

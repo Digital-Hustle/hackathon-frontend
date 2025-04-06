@@ -6,6 +6,10 @@ declare module '*.scss' {
     export = classnames;
 }
 
+declare module '*.xlsx' {
+    const src: string;
+    export default src;
+}
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';

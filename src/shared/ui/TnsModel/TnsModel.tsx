@@ -14,7 +14,7 @@ export const TnsModel = ({className}: BearProps) => {
     return (
         <div className={cls.WrapperModel}>
             <Spline
-                scene="https://prod.spline.design/hKJnHBqnhnfirnuU/scene.splinecode"
+                scene="https://prod.spline.design/kF1R4zM5EUFzIDHv/scene.splinecode"
             />
         </div>
     );
