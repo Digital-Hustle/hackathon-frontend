@@ -1,0 +1,19 @@
+@mixin font(
+  $fontFamily: '',
+  $fontName: '',
+  $fontWeight: 400,
+  $fontStyle: normal,
+  $fontDisplay: swap
+) {
+  @font-face {
+    font-family: $fontFamily;
+    src: url("../../shared/assets/fonts/#{$fontName}/#{$fontWeight}.otf") format('woff2');
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    font-display: $fontDisplay;
+  }
+}
+
+@include font('Pdfdin', 'pfddin', 400);
+@include font('Pdfdin', 'pfddin', 500);
+@include font('Pdfdin', 'pfddin', 700);

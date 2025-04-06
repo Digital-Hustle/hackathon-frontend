@@ -1,0 +1,35 @@
+.ChatDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70rem;
+}
+
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 6rem;
+  border-block-end: 1px solid var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 55rem;
+  border-inline: 1px solid var(--text-tertiary-color);
+  padding-inline: 1rem;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.title {
+  scale: 1;
+}

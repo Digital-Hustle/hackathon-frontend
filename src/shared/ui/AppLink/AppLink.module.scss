@@ -1,0 +1,15 @@
+@use "../../../app/styles/variables/global" as *;
+
+.AppLink {
+  @include text-body;
+
+  color: var(--text-secondary-color);
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.primary {
+  color: var(--text-secondary-color);
+}

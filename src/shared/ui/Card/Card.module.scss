@@ -1,0 +1,15 @@
+.Card {
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.normal {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.outlined {
+  background-color: var(--main-color);
+  border: none;
+  outline: none;
+}

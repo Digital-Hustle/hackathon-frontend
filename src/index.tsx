@@ -1,19 +1,28 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './app/App';
+import {BrowserRouter} from 'react-router-dom';
+import React from "react";
+import 'app/styles/index.scss'
+import {ThemeProvider} from "app/providers/ThemeProvider";
+import './shared/config/i18n/i18n';
+import {ErrorBoundary} from "app/providers/ErrorBoundary";
+import {StoreProvider} from "app/providers/StoreProvider";
+import {GoogleOAuthProvider} from "@react-oauth/google";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+
+const googleClientId = __CLIENT_ID_GOOGLE__;
+
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <GoogleOAuthProvider clientId={googleClientId}>
+                        <App/>
+                    </GoogleOAuthProvider>
+                </ThemeProvider>
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

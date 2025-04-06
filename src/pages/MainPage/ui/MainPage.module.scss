@@ -1,0 +1,347 @@
+@use "../../../app/styles/variables/global" as *;
+
+.page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 3.2rem;
+  background-color: var(--bg-color);
+}
+
+.scrollIco {
+  fill: transparent;
+  path {
+    stroke: var(--text-color);
+  }
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.itemsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+
+  .loginBtn {
+    padding: 2.5rem 3.4rem;
+    @include text-button-small;
+    position: relative;
+    z-index: 3;
+    background-color: var(--bg-color);
+  }
+
+  .themeSwitcher {
+    z-index: 3;
+  }
+
+  .langSwitcher {
+    z-index: 3;
+  }
+}
+
+.btncalc {
+  padding: 2.5rem 3.4rem;
+  @include text-button-small
+}
+
+
+
+.hero {
+  position: relative;
+  padding: 6rem 3.2rem;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  margin-block-end: 10rem;
+}
+
+
+.content {
+  max-width: 500px;
+  margin-inline-start: 15rem;
+}
+
+/* Заголовок */
+.title {
+  @include text-h0;
+  color: var(--text2-color);
+}
+
+.title span.underline {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Описание */
+.description {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--text2-color);
+}
+
+/* Кнопки */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.calculateBtn {
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.telegramLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text2-color);
+}
+
+.arrowIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--text-secondary);
+}
+
+/* Индикатор прокрутки */
+.scrollIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text2-color);
+  margin-top: 5rem;
+}
+
+.scrollIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--text-secondary);
+}
+
+.linkss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Декоративные элементы */
+.decorations {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none; /* Чтобы декорации не мешали кликам */
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.circle1 {
+  position: absolute;
+  top: 45%;
+  right: 90%;
+  fill: var(--accent-2-color);
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.circle2 {
+  position: absolute;
+  top: -4%;
+  left: 40%;
+  width: 12.8rem;
+  fill: var(--accent-2-color);
+  height: 12.8rem;
+}
+
+.circle3 {
+  position: absolute;
+  top: -4%;
+  left: 50%;
+  width: 122rem;
+  height: 122rem;
+  fill: var(--accent-color);
+  z-index: 2;
+}
+
+.circle4 {
+  position: absolute;
+  top: 4%;
+  right: 30%;
+  fill: var(--accent-2-color);
+  width: 18rem;
+  height: 18rem;
+  z-index: 2;
+}
+
+.sideIllustration {
+  width: 300px;
+  height: auto;
+}
+
+.imageWrapper {
+  width: 70rem;
+  height: 70rem;
+  z-index: 3;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.question {
+  color: var(--accent-color);
+}
+
+.TextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+}
+
+.blueText {
+  color: var(--accent-2-color);
+  @include text700;
+}
+
+.greyText {
+  color: #999FAE;
+  @include text-body-accent;
+}
+
+.instruction {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.instructionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.textInstruction {
+  @include text-body-accent;
+}
+
+.dote {
+  scale: 1;
+}
+
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  margin-inline-start: 15rem;
+}
+
+.lastSection {
+  position: relative;
+  padding: 6rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapperClouds {
+  display: flex;
+  justify-content: center;
+}
+
+.fileInput {
+  margin-block-end: 12rem;
+}
+
+.cloudBig {
+  align-self: flex-start;
+  width: 17rem;
+  height: 13rem;
+}
+
+.cloudSmall {
+  align-self: flex-end;
+  width: 11rem;
+  height: 8rem;
+}
+
+.circlegre1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: var(--particle-grey);;
+  z-index: 2;
+}
+
+.circlegre2 {
+  position: absolute;
+  top: -16%;
+  left: 27%;
+  width: 3.2rem;
+  height: 3.2rem;
+  fill: var(--particle-grey);;
+  z-index: 2;
+}
+
+.circlegre3 {
+  position: absolute;
+  top: 90%;
+  left: 19%;
+  width: 3.2rem;
+  height: 3.2rem;
+  fill: var(--particle-grey);;
+  z-index: 2;
+}
+
+.circlegre4 {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: var(--particle-grey);;
+  z-index: 2;
+}
+
+.shapeIcon {
+  fill: var(--text-color);
+  margin-right: 0.5rem;
+}
+
+.downloadBtn {
+  padding: 2.5rem 3.4rem;
+  @include text-button-small;
+  margin-inline-start: 4rem;
+}

@@ -1,0 +1,44 @@
+@use "../../../app/styles/variables/global" as *;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 3.2rem;
+  background-color: var(--bg-color);
+}
+
+.scrollIco {
+  fill: transparent;
+  path {
+    stroke: var(--text-color);
+  }
+}
+
+.switcherWrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.themeSwitcher {
+  scale: 1;
+}
+
+.langSwitcher {
+  scale: 1;
+}
+
+
+.links, .dropdown {
+  margin-left: auto;
+}
+
+.mainLink {
+  margin-right: 15px;
+}
+
+.appName {
+  width: var(--sidebar-width);
+  margin-left: 15px;
+}

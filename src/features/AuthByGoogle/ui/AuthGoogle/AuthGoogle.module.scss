@@ -1,0 +1,34 @@
+.AuthGoogle {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.SocialText {
+  padding-block: 1.7rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    width: 3rem;
+    height: 1px;
+    background-color: var(--text-secondary-color);
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    width: 3rem;
+    height: 1px;
+    background-color: var(--text-secondary-color);
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,17 @@
+.Message {
+  padding: 2rem;
+  max-width: 300px;
+  width: auto
+}
+
+.your {
+  background-color: var(--accent-color);
+  border-radius: 3rem 3rem 0.5rem 3rem;
+  align-self: flex-end;
+}
+
+.another {
+  background-color: var(--secondaryy-color);
+  border-radius: 0.5rem 3rem 3rem 3rem;
+  align-self: flex-start;
+}

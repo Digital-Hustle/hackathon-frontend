@@ -1,0 +1,143 @@
+@mixin base {
+  font-family: var(--main-font);
+}
+
+@mixin size($value) {
+  font-size: #{($value * 0.1)}rem;
+  line-height: #{($value * 0.1 + 0.8)}rem;
+}
+
+@mixin text-h0 {
+  @include base;
+  @include size(96);
+
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+@mixin text700 {
+  @include base;
+  @include size(18);
+
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+@mixin text-h1 {
+  @include base;
+  @include size(30);
+
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+@mixin text-h2 {
+  @include base;
+  @include size(26);
+
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+@mixin text-numbers {
+  @include base;
+  @include size(56);
+
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+@mixin text-button-large {
+  @include base;
+  @include size(16);
+
+  font-weight: 400;
+  line-height: 2.4rem;
+}
+
+@mixin text-button-small {
+  @include base;
+  @include size(14);
+
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+@mixin text-body-accent {
+  @include base;
+  @include size(18);
+
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+@mixin text-body-accent-medium {
+  @include base;
+  @include size(18);
+
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+@mixin text-body {
+  @include base;
+  @include size(16);
+
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+@mixin text-body-medium {
+  @include base;
+  @include size(16);
+
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+@mixin text-body-small {
+  @include base;
+  @include size(14);
+
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: -1px;
+}
+
+
+:root {
+  @include base;
+
+  ////S
+  //--font-size-s: 12px;
+  //--font-line-s: 20px;
+  //--font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+  //
+  ////M
+  //--font-size-m: 16px;
+  //--font-line-m: 24px;
+  //--font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  //
+  ////L
+  //--font-size-l: 24px;
+  //--font-line-l: 32px;
+  //--font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  //
+  ////XL
+  //--font-size-xl: 32px;
+  //--font-line-xl: 40px;
+  //--font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+
+  // Размеры
+  --navbar-height: 100px;
+  --sidebar-width: 250px;
+  --sidebar-width-collapsed: 80px;
+
+  // z - Индексы
+  --modal-z-index: 10;
+
+  // Цвета
+  --overlay-color: rgba(0 0 0 / 60%);
+  --red-light: #f00;
+  --red-dark: #ce0505;
+}

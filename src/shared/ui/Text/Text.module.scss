@@ -1,0 +1,104 @@
+@use "../../../app/styles/variables/global" as *;
+
+.Text {
+  cursor: text;
+}
+
+.title {
+  color: var(--text-color);
+}
+
+.text {
+  color: var(--text-color);
+}
+
+.error {
+  .title {
+    color: var(--notification-color);
+  }
+  .text {
+    color: var(--notification-color);
+  }
+}
+
+.notification {
+  .title {
+    color: var(--helper-color);
+  }
+  .text {
+    color: var(--helper-color);
+  }
+}
+
+.secondary {
+  .title {
+    color: var(--text-color);
+  }
+  .text {
+    color: var(--text-secondary-color);
+  }
+}
+
+.tertiary {
+  .title {
+    color: var(--text-tertiary-color);
+  }
+  .text {
+    color: var(--text-tertiary-color);
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+
+
+.size_s {
+  .title {
+    font: var(--font-m)
+  }
+
+  .text {
+    @include text-body-small
+  }
+}
+
+.size_m {
+  .title {
+    font: var(--font-l)
+  }
+
+  .text {
+    font: var(--font-m)
+  }
+}
+
+
+
+.size_l {
+  .title {
+    @include text-h2
+  }
+  .text {
+    @include text-body
+  }
+}
+
+.size_xl {
+  .title {
+    @include text-h1
+  }
+
+  .text {
+    @include text-body
+  }
+}

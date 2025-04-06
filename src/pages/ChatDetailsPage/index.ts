@@ -1,0 +1,1 @@
+export {ChatDetailsPageAsync as ChatDetailsPage} from "./ui/ChatDetailsPage/ChatDetailsPage.async"

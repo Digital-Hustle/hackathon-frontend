@@ -1,0 +1,25 @@
+.AuthenticationWidget {
+  width: 100rem;
+  height: 72rem;
+  background: #000;
+  display: flex;
+  border-radius: 2rem;
+  padding-block: 2.4rem;
+  padding-inline: 1.6rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+  background: var(--secondaryy-color);
+  justify-content: center;
+  align-items: start;
+  height: 67rem;
+  border-radius: 2rem;
+  padding-inline: 5.5rem;
+  padding-block: 1rem;
+  position: relative;
+}

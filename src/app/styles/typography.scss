@@ -1,0 +1,44 @@
+@use "variables/global" as *;
+
+
+h1,
+.text-h1 {
+  @include text-h1;
+}
+
+h2,
+.text-h2 {
+  @include text-h2;
+}
+
+.text-numbers {
+  @include text-numbers;
+}
+
+.text-button-large {
+  @include text-button-large;
+}
+
+.text-button-small {
+  @include text-button-small;
+}
+
+.text-body-accent {
+  @include text-body-accent;
+}
+
+.text-body-accent-medium {
+  @include text-body-accent-medium;
+}
+
+.text-body {
+  @include text-body;
+}
+
+.text-body-medium {
+  @include text-body-medium;
+}
+
+.text-body-small {
+  @include text-body-small;
+}

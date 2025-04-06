@@ -1,0 +1,63 @@
+.ListBox {
+  position: relative;
+  max-width: 200px;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options {
+  background-color: var(--card-bg);
+  position: absolute;
+  z-index: 100000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--card-bg);
+  width: 165px;
+}
+
+.item {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.item[data-focus] {
+  background-color: #eef2ff;
+}
+
+.item[data-selected] {
+  background-color: var(--inverted-secondary-color)
+}
+
+.item[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.label {
+  margin-right: 4px;
+}
+
+.optionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.optionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.optionsTopLeft {
+  bottom: 100%;
+  right: 0;
+}
+
+.optionsTopRight {
+  bottom: 100%;
+  left: 0;
+}

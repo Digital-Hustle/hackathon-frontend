@@ -1,0 +1,11 @@
+@use "../../app/styles/variables/global" as *;
+
+.langSwitcher {
+  @include text-button-small;
+
+  cursor: pointer;
+}
+
+.langSwitcherIco {
+  fill: var(--text-color);
+}

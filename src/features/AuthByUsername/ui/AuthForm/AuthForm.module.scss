@@ -1,0 +1,75 @@
+@use "../../../../app/styles/variables/global" as *;
+
+.wrapperloginform {
+  overflow: hidden;
+}
+
+.input {
+  svg {
+    fill: var(--icon-color);
+  }
+}
+
+.loginBtn {
+  margin-top: 15px;
+  margin-left: auto;
+}
+
+.TabsWrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 6rem;
+  width: 20rem;
+  background-color: var(--main-color);
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  margin-block-start: 2.1rem;
+}
+
+.form {
+  padding-block: 2.5rem 0.5rem;
+}
+
+.authBtn {
+  @include text-button-large;
+
+  width: 34rem;
+  margin-top: 1rem;
+}
+
+.errorWrapper {
+  height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.Tabs {
+  @include text-button-small;
+
+  height: 4rem;
+}
+
+.SocialWrapper {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.animateInputHidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out, visibility 0s linear 300ms, max-height 300ms ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.animateInputVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out, visibility 0s, max-height 300ms ease-in-out;
+  max-height: 68px;
+}

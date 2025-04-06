@@ -1,0 +1,135 @@
+.Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 6px 15px;
+  height: 6rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    fill-opacity: 0.9;
+    stroke-opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.transparent {
+  background-color: transparent;
+  border: none;
+  border-radius: 2rem;
+  height: 6rem;
+}
+
+.accent {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 2rem;
+  height: 6rem;
+}
+
+.main {
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 2rem;
+  height: 6rem;
+}
+
+.background {
+  background-color: var(--main-color);
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+}
+
+.clear {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.clearInverted {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--inverted-primary-color)
+}
+
+.outline {
+  border: 1px solid var(--accent-color);
+  color: var(--text-color);
+  background: none;
+  border-radius: 2rem;
+}
+
+.outline_red {
+  border: 1px solid var(--red-light);
+  color: var(--red-light);
+  background: none;
+}
+
+//.background {
+//  background-color: var(--bg-color);
+//  color: var(--primary-color);
+//  border: none;
+//}
+
+.backgroundInverted {
+  background-color: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  border: none;
+}
+
+.square {
+  padding: 0;
+}
+
+.size_s {
+  height: 3.5rem;
+  font: var(--font-s)
+}
+
+.size_xl {
+  font: var(--font-xl)
+}
+
+.square.size_m {
+  width: 5rem;
+  height: 5rem;
+}
+
+.square.size_l {
+  width: var(--font-line-l);
+  height: var(--font-line-l);
+}
+
+.square.size_xl {
+  width: var(--font-line-xl);
+  height: var(--font-line-xl);
+}
+
+.size_m {
+  font: var(--font-m);
+}
+
+.size_l {
+  font: var(--font-l);
+}
+
+.size_xl {
+  font: var(--font-xl);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

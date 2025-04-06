@@ -1,0 +1,26 @@
+.Tabs {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabItem {
+  width: 10rem;
+  position: relative;
+  border-radius: 2rem;
+  z-index: 2;
+}
+
+.tabActiveItem {
+  position: absolute;
+  width: 10rem;
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2rem;
+  transition: transform 300ms ease-in-out;
+  left: 0;
+  top: 0;
+}
+

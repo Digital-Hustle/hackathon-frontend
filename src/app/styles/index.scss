@@ -1,0 +1,66 @@
+@use "reset" as *;
+@use "variables/global" as *;
+@use "themes/normal" as *;
+@use "themes/dark" as *;
+@use "themes/purple" as *;
+@use "fonts";
+@use "typography";
+
+html {
+  font-size: 10px;
+  --main-font: 'Pdfdin', 'Helvetica Neue', 'Arial';
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: calc(10px + (5 * (100vw - 320px)) / 447);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: calc(10px + (2 * (100vw - 768px)) / 255);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1360px) {
+  html {
+    font-size: calc(8px + (1.5 * (100vw - 1024px)) / 336);
+  }
+}
+
+@media (min-width: 1361px) {
+  html{
+    font-size: 10px;
+  }
+}
+
+body {
+  color: var(--text-color)
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.content-page {
+  display: flex;
+}
+
+
+*::-webkit-scrollbar {
+  width: 1.2rem;
+  height: 0.8rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-primary-color);
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+}
